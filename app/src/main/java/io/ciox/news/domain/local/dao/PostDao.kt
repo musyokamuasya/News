@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PostDao {
     @Query("SELECT * FROM post_table ")
-    suspend fun getAllPosts(): Flow<List<Post>>
+    fun getAllPosts(): Flow<List<Post>>
 
     @Query("SELECT * FROM post_table WHERE title LIKE :name")
-    suspend fun getPostByTitle (name:String): Flow<List<Post>>
+    fun getPostByTitle (name:String): Flow<List<Post>>
 
     @Delete
     suspend fun deletePosts(vararg post:Post)
