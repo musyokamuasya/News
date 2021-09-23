@@ -10,7 +10,7 @@ class PostRepository(private val postDao: PostDao) {
     val postByTitle:Flow<List<Post>> = postDao.getPostByTitle(String())
 
     @WorkerThread
-    suspend fun insert(post:Post){
+    suspend fun insertPost(post:Post){
         postDao.createPost(post)
     }
 
