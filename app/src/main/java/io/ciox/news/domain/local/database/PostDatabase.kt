@@ -23,7 +23,7 @@ public abstract class PostDatabase:RoomDatabase() {
                 }
             }
         }
-
+//  TODO Callbacks
     private suspend fun populateDatabase(postDao: PostDao) {
         postDao.deletePosts()
         var post = Post(1, "Burnely is playing Manchester tomorrow", "The players are happy. The weekend is finally here. Lets go play")
@@ -54,6 +54,7 @@ public abstract class PostDatabase:RoomDatabase() {
                 if (instance==null){
                     instance = Room.databaseBuilder(context.applicationContext, PostDatabase::class.java, DB_NAME)
                         .fallbackToDestructiveMigration()
+//                            Unable to add the callback
                         .build()
                     INSTANCE = instance
                 }
