@@ -6,44 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:elevation="@dimen/cardview_default_radius"
-        app:cardCornerRadius="@dimen/card_elevation"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/card_elevation"
-        app:layout_constraintTop_toTopOf="parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/cover_image"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:src="@color/purple_200" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/post_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/cover_image"
-            android:fontFamily="@font/capriola"
-            android:textStyle="bold"
-            android:padding="@dimen/activity_vertical_margin"
-            android:text="@string/sample_title" />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/content_sample"
-            android:fontFamily="@font/capriola"
-            android:layout_below="@id/post_title"
-            android:layout_toEndOf="@id/cover_image"
-            android:padding="@dimen/activity_vertical_margin"/>
-
-    </RelativeLayout>
-    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
