@@ -15,13 +15,12 @@ class HomeViewModel (private val repository: PostRepository) : ViewModel() {
     }
 }
 
-class HomeViewModelFactory(private val repository: PostRepository):ViewModelProvider.Factory{
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+class HomeViewModelFactory (private val repository: PostRepository):ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)){
             @Suppress("UNCHECKED_CAST")
             return HomeViewModel(repository) as T
         }
-        throw IllegalArgumentException("Unknown model class")
+        throw IllegalArgumentException("Unkoown model class")
     }
-
 }
