@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.ciox.news.domain.local.dao.PostDao
 import io.ciox.news.domain.local.model.Post
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [Post::class], version = 1, exportSchema = false)
 public abstract class PostDatabase:RoomDatabase() {
@@ -16,7 +17,7 @@ public abstract class PostDatabase:RoomDatabase() {
         @Volatile
         private var INSTANCE: PostDatabase? = null
 
-        fun getInstance(context: Context):PostDatabase{
+        fun getInstance(context: Context, applicationScope: CoroutineScope):PostDatabase{
 
             synchronized(this){
                 var instance = INSTANCE
