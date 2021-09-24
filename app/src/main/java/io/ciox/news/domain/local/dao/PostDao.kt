@@ -14,7 +14,7 @@ interface PostDao {
     fun getPostByTitle (name:String): Flow<List<Post>>
 
     @Delete
-    suspend fun deletePosts(vararg post:Post)
+    suspend fun deletePosts()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun createPost(vararg post:Post)
