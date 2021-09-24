@@ -21,6 +21,6 @@ class HomeViewModelFactory (private val repository: PostRepository):ViewModelPro
             @Suppress("UNCHECKED_CAST")
             return HomeViewModel(repository) as T
         }
-        throw IllegalArgumentException("Unkoown model class")
+        throw IllegalArgumentException("Unknown model class")
     }
 }
